@@ -23,14 +23,16 @@ module.exports = function(grunt) {
       test: {
         options: {
           reporter: 'mocha-junit-reporter',
-          captureFile: 'log.txt'
+          captureFile: 'log.txt',
+          reporterOptions: {
+            mochaFile: './test/result.xml'
+          }
         },
         src: ['test/test.js']
       }
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha-test');
