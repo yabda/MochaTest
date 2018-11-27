@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     mochaTest:{
       test: {
         options: {
-          reporter: 'spec',
+          reporter: 'mocha-junit-reporter',
           captureFile: 'log.txt'
         },
         src: ['test/test.js']
